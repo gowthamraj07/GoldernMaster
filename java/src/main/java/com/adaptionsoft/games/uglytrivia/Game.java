@@ -82,13 +82,13 @@ public class Game {
 
     private void askQuestion() {
         if ("Pop".equals(currentCategory()))
-            System.out.println(popQuestions.removeFirst());
+            printMessage(popQuestions.removeFirst());
         if ("Science".equals(currentCategory()))
-            System.out.println(scienceQuestions.removeFirst());
+            printMessage(scienceQuestions.removeFirst());
         if ("Sports".equals(currentCategory()))
-            System.out.println(sportsQuestions.removeFirst());
+            printMessage(sportsQuestions.removeFirst());
         if ("Rock".equals(currentCategory()))
-            System.out.println(rockQuestions.removeFirst());
+            printMessage(rockQuestions.removeFirst());
     }
 
 
