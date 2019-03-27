@@ -116,13 +116,11 @@ public class Game {
                         + " Gold Coins.");
 
                 boolean winner = didPlayerWin();
-                currentPlayer++;
-                if (currentPlayer == players.size()) currentPlayer = 0;
+                calculateCurrentPlayer();
 
                 return winner;
             } else {
-                currentPlayer++;
-                if (currentPlayer == players.size()) currentPlayer = 0;
+                calculateCurrentPlayer();
                 return true;
             }
 
@@ -137,8 +135,7 @@ public class Game {
                     + " Gold Coins.");
 
             boolean winner = didPlayerWin();
-            currentPlayer++;
-            if (currentPlayer == players.size()) currentPlayer = 0;
+            calculateCurrentPlayer();
 
             return winner;
         }
@@ -149,8 +146,7 @@ public class Game {
         printMessage(players.get(currentPlayer) + " was sent to the penalty box");
         inPenaltyBox[currentPlayer] = true;
 
-        currentPlayer++;
-        if (currentPlayer == players.size()) currentPlayer = 0;
+        calculateCurrentPlayer();
         return true;
     }
 
@@ -166,5 +162,10 @@ public class Game {
         places[currentPlayer] = places[currentPlayer] + roll;
         if (places[currentPlayer] > 11)
             places[currentPlayer] = places[currentPlayer] - 12;
+    }
+
+    private void calculateCurrentPlayer() {
+        currentPlayer++;
+        if (currentPlayer == players.size()) currentPlayer = 0;
     }
 }
