@@ -6,18 +6,18 @@ import java.util.LinkedList;
 
 public class Game {
 	private final PrintStream out;
-	ArrayList players = new ArrayList();
-    int[] places = new int[6];
-    int[] purses  = new int[6];
-    boolean[] inPenaltyBox  = new boolean[6];
+	private ArrayList players = new ArrayList();
+    private int[] places = new int[6];
+    private int[] purses  = new int[6];
+    private boolean[] inPenaltyBox  = new boolean[6];
     
-    LinkedList popQuestions = new LinkedList();
-    LinkedList scienceQuestions = new LinkedList();
-    LinkedList sportsQuestions = new LinkedList();
-    LinkedList rockQuestions = new LinkedList();
+    private LinkedList popQuestions = new LinkedList();
+    private LinkedList scienceQuestions = new LinkedList();
+    private LinkedList sportsQuestions = new LinkedList();
+    private LinkedList rockQuestions = new LinkedList();
     
-    int currentPlayer = 0;
-    boolean isGettingOutOfPenaltyBox;
+    private int currentPlayer = 0;
+    private boolean isGettingOutOfPenaltyBox;
 
 	public  Game(PrintStream out){
     	for (int i = 0; i < 50; i++) {
@@ -29,17 +29,11 @@ public class Game {
 		this.out = out;
 	}
 
-	public String createRockQuestion(int index){
+	private String createRockQuestion(int index){
 		return "Rock Question " + index;
-	}
-	
-	public boolean isPlayable() {
-		return (howManyPlayers() >= 2);
 	}
 
 	public boolean add(String playerName) {
-		
-		
 	    players.add(playerName);
 	    places[howManyPlayers()] = 0;
 	    purses[howManyPlayers()] = 0;
@@ -51,7 +45,7 @@ public class Game {
 		return true;
 	}
 
-	public int howManyPlayers() {
+	private int howManyPlayers() {
 		return players.size();
 	}
 
@@ -171,7 +165,7 @@ public class Game {
 		return !(purses[currentPlayer] == 6);
 	}
 
-	void printMessage(String message) {
+	private void printMessage(String message) {
 		out.println(message);
 	}
 }
