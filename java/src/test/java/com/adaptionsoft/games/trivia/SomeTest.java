@@ -9,14 +9,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Random;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class SomeTest {
 
 	@Test
 	@Ignore
 	public void true_is_true() {
-		assertTrue(false);
+		fail();
 	}
 
 	@Test
