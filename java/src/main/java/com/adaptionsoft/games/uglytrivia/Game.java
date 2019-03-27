@@ -24,16 +24,12 @@ public class Game {
 			popQuestions.addLast("Pop Question " + i);
 			scienceQuestions.addLast(("Science Question " + i));
 			sportsQuestions.addLast(("Sports Question " + i));
-			rockQuestions.addLast(createRockQuestion(i));
+            rockQuestions.addLast("Rock Question " + i);
     	}
 		this.out = out;
 	}
 
-	private String createRockQuestion(int index){
-		return "Rock Question " + index;
-	}
-
-	public void add(String playerName) {
+    public void add(String playerName) {
 	    players.add(playerName);
 	    places[howManyPlayers()] = 0;
 	    purses[howManyPlayers()] = 0;
@@ -158,7 +154,6 @@ public class Game {
 		if (currentPlayer == players.size()) currentPlayer = 0;
 		return true;
 	}
-
 
 	private boolean didPlayerWin() {
 		return !(purses[currentPlayer] == 6);
