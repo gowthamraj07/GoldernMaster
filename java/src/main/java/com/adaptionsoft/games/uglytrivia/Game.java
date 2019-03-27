@@ -33,7 +33,7 @@ public class Game {
 		return "Rock Question " + index;
 	}
 
-	public boolean add(String playerName) {
+	public void add(String playerName) {
 	    players.add(playerName);
 	    places[howManyPlayers()] = 0;
 	    purses[howManyPlayers()] = 0;
@@ -42,8 +42,7 @@ public class Game {
 		String message = playerName + " was added";
 		printMessage(message);
 		printMessage("They are player number " + players.size());
-		return true;
-	}
+    }
 
 	private int howManyPlayers() {
 		return players.size();
