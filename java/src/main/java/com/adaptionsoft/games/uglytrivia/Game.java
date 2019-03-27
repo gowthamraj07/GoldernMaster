@@ -26,6 +26,7 @@ public class Game {
 			sportsQuestions.addLast(("Sports Question " + i));
             rockQuestions.addLast("Rock Question " + i);
     	}
+
 		this.out = out;
 	}
 
@@ -35,8 +36,7 @@ public class Game {
 	    purses[howManyPlayers()] = 0;
 	    inPenaltyBox[howManyPlayers()] = false;
 
-		String message = playerName + " was added";
-		printMessage(message);
+        printMessage(playerName + " was added");
 		printMessage("They are player number " + players.size());
     }
 
