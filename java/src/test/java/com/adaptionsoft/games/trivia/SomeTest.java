@@ -37,6 +37,16 @@ public class SomeTest {
 		assertEquals(50, game.getRockQuestions().size());
 	}
 
+	@Test
+	public void shouldHave2PlayersWhenAdding2Players() {
+		Game game = new Game(System.out);
+
+		game.add("Dinash");
+		game.add("Gowtham");
+
+		assertEquals(2, game.howManyPlayers());
+	}
+
 	private String runGame(Integer seed) {
 		ByteArrayOutputStream outputStream1 = new ByteArrayOutputStream();
 		GameRunner.runGame(new Random(seed), new PrintStream(outputStream1));

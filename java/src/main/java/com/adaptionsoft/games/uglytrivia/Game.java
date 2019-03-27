@@ -40,7 +40,7 @@ public class Game {
         printMessage("They are player number " + players.size());
     }
 
-    private int howManyPlayers() {
+    public int howManyPlayers() {
         return players.size();
     }
 
