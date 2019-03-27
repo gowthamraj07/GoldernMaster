@@ -12,13 +12,13 @@ public class Game {
     private boolean[] inPenaltyBox = new boolean[6];
 
     private LinkedList<String> popQuestions = new LinkedList<>();
+
     private LinkedList<String> scienceQuestions = new LinkedList<>();
     private LinkedList<String> sportsQuestions = new LinkedList<>();
     private LinkedList<String> rockQuestions = new LinkedList<>();
-
     private int currentPlayer = 0;
-    private boolean isGettingOutOfPenaltyBox;
 
+    private boolean isGettingOutOfPenaltyBox;
     public Game(PrintStream out) {
         for (int i = 0; i < 50; i++) {
             popQuestions.addLast("Pop Question " + i);
@@ -54,7 +54,6 @@ public class Game {
         }
 
         calculateCurrentPlayerPlace(roll);
-
         printMessage(players.get(currentPlayer)
                 + "'s new location is "
                 + places[currentPlayer]);
@@ -148,6 +147,22 @@ public class Game {
 
         calculateCurrentPlayer();
         return true;
+    }
+
+    public LinkedList<String> getPopQuestions() {
+        return popQuestions;
+    }
+
+    public LinkedList<String> getScienceQuestions() {
+        return scienceQuestions;
+    }
+
+    public LinkedList<String> getSportsQuestions() {
+        return sportsQuestions;
+    }
+
+    public LinkedList<String> getRockQuestions() {
+        return rockQuestions;
     }
 
     private boolean didPlayerWin() {
